@@ -88,7 +88,9 @@ Definitions for command line Parameters
 
 `<driver>` -- Driver for your display.  Possible values are 'winstar_weg', 'hd44780', 'hd44780_i2c', 'ssd1306_i2c'
 
-`<musicdistro>` -- Sets the type of music player pydPiper is installed on.  Possible values are 'volumio', 'rune', 'lms'
+`<musicdistro>` -- Sets the type of music player pydPiper is installed on.  Possible values are 'volumio', 'mpd', 'moode', 'rune', 'lms'
+
+When using 'moode', pydPiper reads metadata from moOde's REST API (`/command/?cmd=get_currentsong`) and its renderer metadata endpoints (`/command/renderer.php`).  Enable the `Metadata file` option in moOde's Audio Config so that pydPiper can detect the active renderer and read its metadata.  Renderer metadata requires moOde 10.2.2 or later.  The source reads artist, title, album, duration, play/pause state and cover art for AirPlay, Spotify Connect, Qobuz Connect and Bluetooth.  The API host and port are set with `moode_server` and `moode_port` in `pydPiper.cfg` (defaults `localhost` and `80`).  MPD is still used, when available, to fill in queue position and repeat/random state.
 
 `<width>` -- width of your display in pixels.  If you are using a character display, each column is 5 pixels wide
 `<height>` -- height of your display in pixels.  If you are using a character display, each line is 8 pixels high

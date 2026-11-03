@@ -1,4 +1,4 @@
-__all__ = [ u"musicdata_lms", u"musicdata_mpd", u"musicdata_spop", u"musicdata_rune", u"musicdata_volumio2", u"keydata" ]
+__all__ = [ u"musicdata_lms", u"musicdata_mpd", u"musicdata_moode", u"musicdata_spop", u"musicdata_rune", u"musicdata_volumio2", u"keydata" ]
 
 
 try:
@@ -8,6 +8,11 @@ except ImportError:
 
 try:
 	import musicdata_mpd
+except ImportError:
+	pass
+
+try:
+	import musicdata_moode
 except ImportError:
 	pass
 

@@ -61,10 +61,15 @@ WEATHER_LOCATION = safeget(config,'SYSTEM', 'weather_location')
 # Music Source Parameters
 MUSIC_SERVICE = safeget(config, 'SOURCE', 'source_type')
 
-# Used by Volumio V1 and Moode
-MPD_SERVER = safeget(config, 'SOURCE', 'mpd_server')
-MPD_PORT = safeget(config, 'SOURCE', 'mpd_port')
+# Used by Volumio V1, MPD and moOde
+MPD_SERVER = safeget(config, 'SOURCE', 'mpd_server', 'localhost')
+MPD_PORT = int(safeget(config, 'SOURCE', 'mpd_port', 6600))
 MPD_PASSWORD = safeget(config, 'SOURCE', 'mpd_password')
+
+# Used by the moOde REST API source
+MOODE_SERVER = safeget(config, 'SOURCE', 'moode_server', MPD_SERVER)
+MOODE_PORT = int(safeget(config, 'SOURCE', 'moode_port', 80))
+MOODE_POLL_INTERVAL = float(safeget(config, 'SOURCE', 'moode_poll_interval', 1))
 
 # Used by Volumio v1 and Moode
 SPOP_SERVER = safeget(config, 'SOURCE', 'spop_server')

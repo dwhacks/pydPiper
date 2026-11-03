@@ -228,7 +228,7 @@ if __name__ == u'__main__':
                                     'variable': 'LMS_PLAYER',
                                 }
                             ],
-                        '^mpd$|^moode$':
+                        '^mpd$':
                             [
                                 {
                                     'prompt': 'Server address?',
@@ -243,6 +243,25 @@ if __name__ == u'__main__':
                                 {
                                     'prompt': 'Password?',
                                     'variable': 'MPD_Password',
+                                }
+                            ],
+                        '^moode$':
+                            [
+                                {
+                                    'prompt': 'moOde web server address?',
+                                    'variable': 'MOODE_SERVER',
+                                    'default': 'localhost'
+                                },
+                                {
+                                    'prompt': 'moOde web server port?',
+                                    'variable': 'MOODE_PORT',
+                                    'default': '80'
+                                },
+                                {
+                                    'prompt': 'Metadata poll interval (in seconds)?',
+                                    'variable': 'MOODE_POLL_INTERVAL',
+                                    'default': '1',
+                                    'help': 'How often pydPiper should read the moOde metadata file. Enable the Metadata file option in moOde Audio Config so that Spotify and AirPlay metadata is available.'
                                 }
                             ],
                         '^spop$':
