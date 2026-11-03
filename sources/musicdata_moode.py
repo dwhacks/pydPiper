@@ -129,13 +129,6 @@ class musicdata_moode(musicdata.musicdata):
 		if not song.get(u'outrate') and meta.get(u'oformat'):
 			song[u'outrate'] = meta[u'oformat']
 
-		if meta.get(u'playstate'):
-			playstate = meta[u'playstate'].lower()
-			if playstate == u'pause':
-				song[u'state'] = u'pause'
-			elif playstate == u'resume':
-				song[u'state'] = u'play'
-
 		duration = meta.get(u'duration')
 		if duration not in (None, u''):
 			try:
